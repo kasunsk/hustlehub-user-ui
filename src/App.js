@@ -1,10 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import './styles/Button.css';
+
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HustleGrid from './components/HustleGrid';
 import { fetchActiveHustles } from './utils/api';
 import Header from './components/Header';
-import './styles/Button.css';
+import ViewHustle from './components/ViewHustle';
 
 function App() {
   const [hustleData, setHustleData] = useState([]);
@@ -22,7 +25,7 @@ function App() {
      }
   };
   return (
-    <div className="App">
+  <Router>
         <div><Header /> </div>
         <div className="button-container">
                 <button className="my-hustle-button" onClick={loadHustles}>
@@ -30,8 +33,11 @@ function App() {
                 </button>
         </div>
         {loading && <p>Loading...</p>}
-        <HustleGrid data={hustleData} />
-    </div>
+        <Routes>
+                <Route path="/" element={<HustleGrid data={hustleData} />} />
+                <Route path="/view/:id" element={<ViewHustle />} />
+         </Routes>
+     </Router>
   );
 }
 

@@ -1,6 +1,6 @@
 table {
   margin-top: 35px;
-  width: 100%;
+  width: 80%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -8,7 +8,7 @@ table {
 
 thead {
   background-color: #f4f4f4;
-  text-align: left;
+  text-align: center;
 }
 
 th, td {
@@ -48,5 +48,18 @@ button:hover {
 }
 
 .table-container {
-  overflow-x: auto; /* Enable horizontal scroll on small screens */
+  width: 80%; /* Adjust width as needed */
+  max-width: 1200px; /* Limit maximum width */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for styling */
+  border-radius: 8px; /* Optional rounded corners */
+  padding: 20px; /* Optional padding inside the grid */
+}
+
+.grid-container {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: 40vh; /* Full viewport height */
+  background-color: #f8f9fa; /* Optional background color */
 }
