@@ -1,23 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import HustleGrid from './components/HustleGrid';
+import { fetchActiveHustles } from './utils/api';
+import Header from './components/Header';
+import './styles/Button.css';
 
 function App() {
+  const [hustleData, setHustleData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const loadHustles = async () => {
+     setLoading(true);
+     try {
+       const data = await fetchActiveHustles();
+       setHustleData(data);
+     } catch (error) {
+       console.error('Failed to load hustles:', error.message);
+     } finally {
+       setLoading(false);
+     }
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div><Header /> </div>
+        <div className="button-container">
+                <button className="my-hustle-button" onClick={loadHustles}>
+                  My Hustle
+                </button>
+        </div>
+        {loading && <p>Loading...</p>}
+        <HustleGrid data={hustleData} />
     </div>
   );
 }

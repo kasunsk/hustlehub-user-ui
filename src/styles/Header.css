@@ -1,0 +1,18 @@
+.header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  position: fixed; /* Sticks to the top of the page */
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures it stays on top of other elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+body {
+  margin: 0;
+  padding-top: 85px; /* Prevent content from overlapping with the header */
+}
