@@ -1,0 +1,20 @@
+.button-container {
+  position: fixed; /* Sticks the button to a fixed position on the page */
+  top: 100px; /* Adjust as needed to position it below the header */
+  left: 20px; /* Aligns it to the left */
+  z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.my-hustle-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.my-hustle-button:hover {
+  background-color: #0056b3;
+}
