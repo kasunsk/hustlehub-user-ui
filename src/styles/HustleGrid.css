@@ -48,7 +48,7 @@ button:hover {
 }
 
 .table-container {
-  width: 80%; /* Adjust width as needed */
+  width: 100%; /* Adjust width as needed */
   max-width: 1200px; /* Limit maximum width */
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for styling */

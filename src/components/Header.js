@@ -4,7 +4,7 @@ import '../styles/Header.css';
 const Header = () => {
   return (
     <header className="header">
-      <h1>Hustlehub Pvt Ltd</h1>
+      <h1>Hustlehub User Portal</h1>
     </header>
   );
 };
