@@ -16,3 +16,17 @@ body {
   margin: 0;
   padding-top: 85px; /* Prevent content from overlapping with the header */
 }
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+}
+
+.logged-in-info {
+  font-size: 14px;
+  font-weight: bold;
+}

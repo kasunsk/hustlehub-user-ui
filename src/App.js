@@ -10,42 +10,27 @@ import Header from './components/Header';
 import ViewHustle from './components/ViewHustle';
 import Login from './components/Login';
 import CreateAccount from './components/CreateAccount';
-import { UserProvider } from './components/UserContext'; //
+import { UserProvider } from './components/UserContext';
+import HustleList from './components/HustleList';
+import { AuthProvider } from './components/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
-  const [hustleData, setHustleData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const loadHustles = async () => {
-     setLoading(true);
-     try {
-       const data = await fetchActiveHustles();
-       setHustleData(data);
-     } catch (error) {
-       console.error('Failed to load hustles:', error.message);
-     } finally {
-       setLoading(false);
-     }
-  };
   return (
+  <AuthProvider>
   <UserProvider>
   <Router>
         <div><Header /> </div>
-        <div className="button-container">
-                <button className="my-hustle-button" onClick={loadHustles}>
-                  My Hustle
-                </button>
-        </div>
-        {loading && <p>Loading...</p>}
         <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/create-account" element={<CreateAccount />} />
                 <Route path="*" element={<Navigate to="/login" />} /> {/* Redirect to login by default */}
-                <Route path="/hustle" element={<HustleGrid data={hustleData} />} />
-                <Route path="/view/:id" element={<ViewHustle />} />
+                <Route path="/hustle" element={<ProtectedRoute><HustleList /></ProtectedRoute>} />
+                <Route path="/view/:id" element={<ProtectedRoute><ViewHustle /></ProtectedRoute>} />
          </Routes>
      </Router>
       </UserProvider>
+      </AuthProvider>
   );
 }
 

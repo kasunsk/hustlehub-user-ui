@@ -1,3 +1,4 @@
+
 .button-container {
   display: flex;
   justify-content: flex-end; /* Align items to the right */
@@ -23,10 +24,30 @@
   background-color: #0056b3; /* Darker blue on hover */
 }
 
-.button-container {
+.search-container {
   display: flex;
-  justify-content: flex-end; /* Align items to the right */
-  gap: 10px; /* Add spacing between buttons */
-  margin: 10px 20px; /* Add some margin for positioning */
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
 }
 
+.status-dropdown {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}

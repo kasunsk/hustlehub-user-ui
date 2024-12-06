@@ -1,0 +1,102 @@
+/* Center the form on the screen */
+.create-hustle-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px); /* Subtract header height for proper centering */
+  background-color: #f5f5f5; /* Light background for better contrast */
+}
+
+.create-hustle-form {
+  background: white; /* Form background color */
+  padding: 500px; /* Add padding around the form */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a professional look */
+  max-width: 600px; /* Set max width for the form */
+  width: 50%; /* Make the form responsive */
+}
+
+.create-hustle-form h2 {
+  text-align: center;
+  color: #007bff; /* Blue color matching the theme */
+  margin-bottom: 20px;
+}
+
+.create-hustle-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.create-hustle-form input,
+.create-hustle-form select,
+.create-hustle-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.create-hustle-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.create-hustle-form button:hover {
+  background-color: #0056b3; /* Darker blue for hover effect */
+}
+
+.my-hustle-button,
+
+.create-hustle-button {
+  width: 500px; /* Set a fixed width */
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  padding: 10px 15px; /* Add padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 14px; /* Font size */
+}
+
+.my-hustle-button:hover,
+.create-hustle-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  gap: 10px; /* Add spacing between buttons */
+  margin: 10px 20px; /* Add some margin for positioning */
+}
+
+.my-hustle-button,
+
+.create-hustle-button {
+  width: 150px; /* Set a fixed width */
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  padding: 10px 15px; /* Add padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 14px; /* Font size */
+}
+
+.my-hustle-button:hover,
+.create-hustle-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  gap: 10px; /* Add spacing between buttons */
+  margin: 10px 20px; /* Add some margin for positioning */
+}

@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext  } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 import '../styles/Login.css';
 
 const Login = () => {
+  const { login, setSailorId, setFullName } = useContext(AuthContext);
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -18,7 +20,14 @@ const Login = () => {
     });
 
     if (response.ok) {
-      navigate('/'); // Navigate to Hustle Grid page
+      login()
+      const data = await response.json();
+      console.log('Login successful:', data);
+      console.log('sailorId:', data.id);
+      setFullName(data.userName); //
+      setSailorId(data.id); // Save sailorId to the context
+      console.log('Navigating to /hustle');
+      navigate('/hustle'); // Navigate to Hustle Grid page
     } else {
       setError('Invalid login credentials. Please try again or create an account.');
     }

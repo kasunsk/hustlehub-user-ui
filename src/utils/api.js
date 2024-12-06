@@ -26,3 +26,21 @@ export const fetchHustles = async () => {
     throw error; // Re-throw the error for handling in the component
   }
 };
+
+export const fetchAvailableStatuses = async () => {
+  const response = await fetch('http://localhost:8080/v1/hustles/availableStatus');
+  if (!response.ok) {
+    throw new Error('Failed to fetch available statuses');
+  }
+  return response.json();
+};
+
+// Fetch hustles by status
+export const fetchHustlesByStatus = async (status) => {
+  const url = `http://localhost:8080/v1/hustles/status/${status}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch hustles with status: ${status}`);
+  }
+  return response.json();
+};
